@@ -19,16 +19,15 @@ void deleteFromList() {
         cout << "(If you wish to exit, please enter 0)" << endl;
         cin >> choice;
         while  (choice > dem) {
-            cout << "Please enter an appropriate number: " << endl;
+            cout << "Please enter an appropriate number: " << endl; // Khi "cố tình" chọn số lớn hơn số có trong list
             cin >> choice;
         }
-        // deleteFile();
-        a.erase(a.begin()+choice-1);
+        a.erase(a.begin()+choice-1); // xóa phần tử đã chọn
         dem--;
 }
-fstream myLog;
 void Save() {
-    myLog.open ("Log.txt", ios::out);
+    ofstream myLog;
+    myLog.open ("Log.txt", ios::out); // Có thể sửa tên file ở đây
     if (myLog.fail()) {
         cout << "No Log file" << endl;
     }
@@ -39,23 +38,28 @@ void Save() {
         myLog.close();
     }
 }
-void loadDataFile() { // Vẫn chưa hoạt động
-    myLog.open("Log.txt", ios::in);
+void loadDataFile() {
+    ifstream myLog;
+    myLog.open("Log.txt", ios::in); // Có thể sửa tên file ở đây
     if (myLog.fail()) {
         cout << "No Log file" << endl;
     }
     else {
+        dem = 0; // reset lại đếm để in bảng mới
         string b;
-        while(getline(myLog, b)) {
-            cout << b << endl;
-            dem++;
+        while(!myLog.eof()) {
+            getline(myLog, b); // Đọc từng dòng trong file
+            if(myLog.good()) {
+                a.push_back(b); // đẩy nội dung các dòng trong file vào các phần tử tương ứng trong vector
+                dem++; // đếm số phần tử để in trong main
+            }
         }
         myLog.close();
     }
 }
 // Main ??
 int main() {
-    int flag = 1; // Quyết định file dừng hay đóng
+    int flag = 1; // Quyết định file tiếp tục hay đóng
     int choice;
     do {
         system("cls"); // Reset lại màn hình
@@ -92,9 +96,9 @@ int main() {
             case 5:
                 flag = 0; //Exit();
                 break;
-            default: // Vẫn đang lỗi khi nhập chữ, số thập phân, nhập từ 0-9 thì không bị lỗi
+            default: // Vẫn đang lỗi khi nhập chữ, số thập phân. Nhập từ 0-9 thì không bị lỗi
                 cout << "Please enter a number from 1-5" << endl;
-                system("pause");
+                system("pause"); // solution hiện tại, vì nếu ko có thì hệ thống sẽ lại reset, ko hiện cảnh báo nữa
                 break;
         }
     } while (flag == 1);
