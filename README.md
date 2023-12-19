@@ -1,14 +1,14 @@
 # To-do List
-## Overview
+## 📌Overview
 A simple To-do list that can save your important activities for the day and drop it once you are done. The app is still in development and running by terminal CLI.
 
-## Installation
+## 🔨Installation
 * Click on "Releases" on the home page and download `log.txt` and the `To-doList.exe` file. 
 * Run the `To-doList.exe` and test out the app
 > [!IMPORTANT]
 > Make sure `log.txt` and `To-doList.exe` are on the same directory.
 
-## Known issues
+## :x:Known issues
 * When choosing numbers, if you input characters other than numbers, the code will loop and crash.
 > [!TIP]
 > Just listen to what the program said and you should be safe!!!
@@ -22,6 +22,6 @@ system("pause");
 ```
 * Using CLI can be quite the hassle
 
-## Feedbacks
+## 📫Feedbacks
 if you have any problem when using my code, feel free to open an issue.
 Thank you for your time...
