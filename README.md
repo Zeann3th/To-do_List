@@ -8,7 +8,9 @@ A simple To-do list that can save your important activities for the day and drop
 
 ## Known issues
 * When choosing numbers, if you input characters other than numbers, the code will loop and crash.
-* Only works on Windows
+* Only works on Windows <br>
+https://github.com/Zeann3th/To-do_List/blob/b0ec5e0e7c690409364e28431035da3868f1d236/To-doList.cpp#L65
+https://github.com/Zeann3th/To-do_List/blob/b0ec5e0e7c690409364e28431035da3868f1d236/To-doList.cpp#L101
 * Using CLI can be quite the hassle
 
 ## Feedbacks
